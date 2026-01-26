@@ -1,20 +1,354 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>무신사</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = () => {
+            function setupTabs(selector) {
+                const tabs = document.querySelectorAll(selector);
+                if (tabs.length === 0) return;
+
+                // 첫 번째 탭 활성화
+                const first = tabs[0];
+                first.classList.add("active");
+                const firstImg = first.querySelector("img");
+                if (firstImg) firstImg.src = firstImg.src.replace("-off", "-on");
+
+                // 클릭 이벤트
+                tabs.forEach(tab => {
+                    tab.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        // 기존 활성화 해제
+                        tabs.forEach(t => {
+                            t.classList.remove("active");
+                            const img = t.querySelector("img");
+                            if (img) img.src = img.src.replace("-on", "-off");
+                        });
+
+                        // 클릭한 탭 활성화
+                        tab.classList.add("active");
+                        const img = tab.querySelector("img");
+                        if (img) img.src = img.src.replace("-off", "-on");
+                    });
+                });
+            }
+            // 적용
+            setupTabs(".bottom_nav .tab_nav li");
+
+
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+
+
+            var swiper = new Swiper(".swiper.foryou", {
+                slidesPerView: 3.5,
+                spaceBetween: 10,
+                freeMode: true,
+            });
+        };
+    </script>
+
 </head>
+
 <body>
     <div id="wrap">
         <header class="header">
             <div class="inner">
-                <h1 class="logo">
-                    musinsa
-                </h1><!-- .logo end -->
+                <h1 class="logo">MUSINSA</h1><!-- .logo end -->
+                <nav class="nav">
+                    <a href="#"><img src="img/bell-icon.png" alt="알림아이콘"></a>
+                    <a href="#"><img src="img/bag-icon.png" alt="장바구니아이콘"></a>
+                </nav><!-- .nav end -->
             </div><!-- .inner end -->
-        </header>
+        </header><!-- end -->
+
+        <div class="main">
+            <div class="inner">
+                <div class="search">
+                    <input type="text" name="" id="" placeholder="">
+                    <button class="camera">
+                        <img src="img/search-icon.png" alt="검색아이콘">
+                    </button><!-- camera -->
+                </div><!-- search -->
+
+                <section class="main_visual">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/main-img-1.png" alt="메인이미지-1">
+                                <div class="text">
+                                    <b>유니크한 포인트로<br>완성한 데일리 룩</b>
+                                    <p>예그</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>1 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-2.png" alt="메인이미지-2">
+                                <div class="text">
+                                    <b>최고의 감각을 위한<br>최대 20% 쿠폰</b>
+                                    <p>젝시믹스</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>2 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-3.png" alt="메인이미지-3">
+                                <div class="text">
+                                    <b>엔젤루밍이 선택한<br>쿠션 단독 구성</b>
+                                    <p>몰바니</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>3 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-4.png" alt="메인이미지-4">
+                                <div class="text">
+                                    <b>메이크업 착붙<br>프라이머</b>
+                                    <p>에스쁘아</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>4 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-5.png" alt="메인이미지-5">
+                                <div class="text">
+                                    <b>송이송이 픽<br>최대 55% 할인</b>
+                                    <p>배리웨이, 니아르</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>5 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-6.png" alt="메인이미지-6">
+                                <div class="text">
+                                    <b>ACG 인터밀란<br> 컬래버 아이템 발매</b>
+                                    <p>나이키</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>6 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-7.png" alt="메인이미지-7">
+                                <div class="text">
+                                    <b>인플루언서 픽<br>멕시코 66 PF</b>
+                                    <p>오니츠카타이거</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>7 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-8.png" alt="메인이미지-8">
+                                <div class="text">
+                                    <b>젠지 오피셜<br>플레이어 유니폼</b>
+                                    <p>무신사 드롭</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>8 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-9.png" alt="메인이미지-9">
+                                <div class="text">
+                                    <b>올해의 트렌드 컬러<br>클라우드 댄서</b>
+                                    <p>무신삿 스탠다드, 닉앤니콜 외</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>9 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <img src="img/main-img-10.png" alt="메인이미지-10">
+                                <div class="text">
+                                    <b>9장 빵터지는 혜택<br>9만원 구빵쿠폰</b>
+                                    <p>앙코르 이벤트</p>
+                                </div><!-- .text end -->
+                                <div class="num">
+                                    <span>10 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                </div><!-- .num end -->
+                            </div><!-- .swiper-slide end -->
+                        </div>
+                    </div>
+                </section><!-- .main_visual -->
+
+                <section class="section-01">
+                    <div class="foryou">
+                        <div class="title">
+                            <b>For You</b>
+                            <span>더보기</span>
+                        </div><!-- .title end -->
+
+                        <div class="list">
+
+                            <div class="swiper foryou">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-1.png" alt="아이템-1">
+                                                <div class="text">
+                                                    <b>무드인사이드</b>
+                                                    <p>워셔블 케이블 후드 풀집업 니트_5Color</p>
+                                                    <div class="price">
+                                                        <span>63%</span>
+                                                        <strong>29,900원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-2.png" alt="아이템-2">
+                                                <div class="text">
+                                                    <b>필루미네이트</b>
+                                                    <p>트윌 코튼 밴딩 팬츠-3Color</p>
+                                                    <div class="price">
+                                                        <span>38%</span>
+                                                        <strong>39,900원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-3.png" alt="아이템-3">
+                                                <div class="text">
+                                                    <b>디미트리블랙</b>
+                                                    <p>데일리 워셔블 피그먼트 헨리넥 라운드 니트_차콜</p>
+                                                    <div class="price">
+                                                        <span>20%</span>
+                                                        <strong>34,900원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-4.png" alt="아이템-4">
+                                                <div class="text">
+                                                    <b>야키클래식</b>
+                                                    <p>모션플렉스 스모키에스프레소</p>
+                                                    <div class="price">
+                                                        <span>29%</span>
+                                                        <strong>99,000원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-5.png" alt="아이템-5">
+                                                <div class="text">
+                                                    <b>요세미티</b>
+                                                    <p>워셔블 케이블 후드 풀집업 니트_5Color</p>
+                                                    <div class="price">
+                                                        <span>48%</span>
+                                                        <strong>25,800원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-6.png" alt="아이템-6">
+                                                <div class="text">
+                                                    <b>트릴리온</b>
+                                                    <p>커브드 벌룬 절개 코튼 팬츠_5color</p>
+                                                    <div class="price">
+                                                        <span>34%</span>
+                                                        <strong>29,900원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-7.png" alt="아이템-7">
+                                                <div class="text">
+                                                    <b>일리오</b>
+                                                    <p>White leopard cross necklace top</p>
+                                                    <div class="price">
+                                                        <strong>49,000원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                        <div class="item">
+                                            <a href="#">
+                                                <img src="img/item-8.png" alt="아이템-8">
+                                                <div class="text">
+                                                    <b>언더컨트롤 스튜디오</b>
+                                                    <p>카드지갑 STAINLESS 6 CARD HOLDER / BK</p>
+                                                    <div class="price">
+                                                        <span>23%</span>
+                                                        <strong>19,130원</strong>
+                                                    </div><!-- .price end -->
+                                                </div><!-- .text end -->
+                                            </a>
+                                        </div><!-- item -->
+                                    </div><!-- swiper-slide -->
+                                </div><!-- swiper-wrapper -->
+                            </div><!-- swiper foryou -->
+                        </div><!-- .list end -->
+                    </div><!-- .foryou end -->
+                </section><!-- .section-01 end -->
+            </div><!-- .inner end -->
+        </div><!-- .main end -->
+
+        <div class="bottom_nav">
+            <ul class="tab_nav">
+                <li class="active">
+                    <img src="img/search-icon-off.png" alt="카테고리아이콘">
+                    <b>카테고리</b>
+                </li>
+                <li>
+                    <img src="img/style-icon-off.png" alt="스타일아이콘">
+                    <b>스타일</b>
+                </li>
+                <li>
+                    <img src="img/home-icon-on.png" alt="홈아이콘">
+                    <b>홈</b>
+                </li>
+                <li>
+                    <img src="img/heart-icon-off.png" alt="좋아요아이콘">
+                    <b>좋아요</b>
+                </li>
+                <li>
+                    <img src="img/my-icon-off.png" alt="마이아이콘">
+                    <b>마이</b>
+                </li>
+            </ul><!-- tab_nav -->
+        </div><!-- bottom_nav -->
     </div><!-- #wrap end -->
 </body>
+
 </html>
