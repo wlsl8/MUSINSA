@@ -58,7 +58,7 @@
 
 
 .header {
-  padding-top: 20px;
+  padding-top: 25px;
   font-size: 22px;
 }
 
@@ -141,7 +141,7 @@
 
 .main .gnb ul {
   width: calc(100% - 40px);
-  margin: 16px auto 0;
+  margin: 13px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -224,7 +224,7 @@
 .section-01 {
   /* width: calc(100% - 40px);
   margin: 25px auto 0; */
-  padding: 35px 20px 25px;
+  padding: 30px 20px 30px;
   background-color: #fff;
 }
 
@@ -305,11 +305,17 @@
 
 
 .bottom_nav {
-  width: calc(100% - 40px);
-  margin: 0 auto;
+  max-width: 430px;
+  min-width: 320px;
+  width: 100%;
+  padding: 0 20px; 
   background-color: #5AB1B5;
   height: 75px;
-
+  position: fixed;  
+  bottom: 0;        
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
 }
 .bottom_nav .tab_nav{
   display: flex;
