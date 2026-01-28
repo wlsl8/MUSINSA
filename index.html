@@ -53,10 +53,25 @@
 
 
             var swiper = new Swiper(".swiper.foryou", {
-                slidesPerView: 3.5,
+                slidesPerView: 'auto',
                 spaceBetween: 10,
                 freeMode: true,
             });
+
+
+            const gnbLinks = document.querySelectorAll('.gnb ul li a');
+            gnbLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.querySelector('img')) return;
+
+                    e.preventDefault();
+
+                    gnbLinks.forEach(l => l.classList.remove('active'));
+
+                    link.classList.add('active');
+                });
+            });
+
         };
     </script>
 
@@ -77,11 +92,21 @@
         <div class="main">
             <div class="inner">
                 <div class="search">
-                    <input type="text" name="" id="" placeholder="">
+                    <input type="text" name="search" id="search" placeholder="">
                     <button class="camera">
                         <img src="img/search-icon.png" alt="검색아이콘">
                     </button><!-- camera -->
                 </div><!-- search -->
+                <div class="gnb">
+                    <ul>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#" class="active">추천</a></li>
+                        <li><a href="#">랭킹</a></li>
+                        <li><a href="#">발매</a></li>
+                        <li><a href="#">콘텐츠</a></li>
+                        <li><a href="#"><img src="img/아래 더보기-icon.png" alt=""></a></li>
+                    </ul>
+                </div><!-- .gnb end -->
 
                 <section class="main_visual">
                     <div class="swiper mySwiper">
@@ -93,8 +118,8 @@
                                     <p>예그</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>1 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>1 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -104,8 +129,8 @@
                                     <p>젝시믹스</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>2 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>2 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -115,8 +140,8 @@
                                     <p>몰바니</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>3 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>3 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -126,8 +151,8 @@
                                     <p>에스쁘아</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>4 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>4 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -137,8 +162,8 @@
                                     <p>배리웨이, 니아르</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>5 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>5 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -148,8 +173,8 @@
                                     <p>나이키</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>6 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>6 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -159,8 +184,8 @@
                                     <p>오니츠카타이거</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>7 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>7 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -170,8 +195,8 @@
                                     <p>무신사 드롭</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>8 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>8 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -181,8 +206,8 @@
                                     <p>무신삿 스탠다드, 닉앤니콜 외</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>9 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>9 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                             <div class="swiper-slide">
@@ -192,8 +217,8 @@
                                     <p>앙코르 이벤트</p>
                                 </div><!-- .text end -->
                                 <div class="num">
-                                    <span>10 / 10</span>
-                                    <img src="img/more-icon.png" alt="더보기아이콘">
+                                    <a href="#"><span>10 / 10</span>
+                                    <img src="img/more-icon.png" alt="더보기아이콘"></a>
                                 </div><!-- .num end -->
                             </div><!-- .swiper-slide end -->
                         </div>
@@ -204,11 +229,10 @@
                     <div class="foryou">
                         <div class="title">
                             <b>For You</b>
-                            <span>더보기</span>
+                            <a href="#"><span>더보기</span></a>
                         </div><!-- .title end -->
 
                         <div class="list">
-
                             <div class="swiper foryou">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -225,6 +249,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-2.png" alt="아이템-2">
@@ -238,6 +264,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-3.png" alt="아이템-3">
@@ -251,6 +279,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-4.png" alt="아이템-4">
@@ -264,6 +294,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-5.png" alt="아이템-5">
@@ -277,6 +309,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-6.png" alt="아이템-6">
@@ -290,6 +324,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-7.png" alt="아이템-7">
@@ -302,6 +338,8 @@
                                                 </div><!-- .text end -->
                                             </a>
                                         </div><!-- item -->
+                                        </div><!-- swiper-slide -->
+                                        <div class="swiper-slide">
                                         <div class="item">
                                             <a href="#">
                                                 <img src="img/item-8.png" alt="아이템-8">
