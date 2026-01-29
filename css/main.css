@@ -149,7 +149,7 @@
 
 .main .gnb ul li a {
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   padding-bottom: 10px;
   position: relative;
@@ -187,12 +187,12 @@
 
 .main .main_visual .swiper-slide .text {
   position: absolute;
-  left: 8%;
+  left: 9%;
   bottom: 8%;
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .main .main_visual .swiper-slide .text b {
@@ -202,7 +202,7 @@
 }
 
 .main .main_visual .swiper-slide .text p {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -225,7 +225,7 @@
 .section-01 {
   /* width: calc(100% - 40px);
   margin: 25px auto 0; */
-  padding: 33px 20px 100px;
+  padding: 35px 20px 100px;
   background-color: #fff;
 }
 
