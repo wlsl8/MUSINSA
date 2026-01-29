@@ -1,20 +1,188 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notice | MUSINSA</title>
     <link rel="stylesheet" href="../css/sub.css">
-<script>
-        window.onload = () => {};
+    <script>
+        window.onload = () => {
+            const toggle = document.getElementById("myToggle");
+            const thumb = toggle.querySelector(".toggle-thumb");
+            const thumbLabel = toggle.querySelector(".toggle-thumb-label");
+            const options = toggle.querySelectorAll(".toggle-option");
+
+            let isOn = true;
+
+            function updateToggle() {
+                if (isOn) {
+                    // thumb 이동
+                    thumb.style.left = "0";
+                    thumbLabel.style.left = "0";
+
+                    // 글자 표시
+                    thumbLabel.textContent = "ON";
+                    thumbLabel.style.color = "#fff";
+
+                    // 옵션 글자는 항상 비활성 색상
+                    options[0].style.color = "#333";
+                    options[1].style.color = "#333";
+                } else {
+                    thumb.style.left = "50%";
+                    thumbLabel.style.left = "50%";
+
+                    thumbLabel.textContent = "OFF";
+                    thumbLabel.style.color = "#fff";
+
+                    options[0].style.color = "#333";
+                    options[1].style.color = "#333";
+                }
+            }
+
+            // 클릭 시 토글
+            toggle.addEventListener("click", () => {
+                isOn = !isOn;
+                updateToggle();
+            });
+
+            // 초기 상태 반영
+            updateToggle();
+
+
+            const gnbItems = document.querySelectorAll(".gnb li");
+
+            gnbItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    gnbItems.forEach(i => i.classList.remove("active"));
+
+                    item.classList.add("active");
+                });
+            });
+
+
+        };
     </script>
 </head>
+
 <body class="sub-page notice">
-    
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+                <h1 class="title">
+                    <a href="../index.html">
+                        <img src="../img/left-more-icon.webp" alt="나가기">
+                        <b>알림</b>
+                    </a>
+                </h1><!-- .title end -->
+                <nav class="nav">
+                    <a href="#"><img src="../img/more-가로-icon.webp" alt="가로더보기"></a>
+                    <a href="#"><img src="../img/search-icon.webp" alt="검색아이콘"></a>
+                    <a href="#"><img src="../img/dark-bag-icon.webp" alt="장바구니아이콘"></a>
+                </nav>
+            </div><!-- .inner end -->
+        </header>
+
+        <div class="main">
+            <div class="inner">
+                <div class="setting-item">
+                    <div class="onoff">
+                        <p>알림수신</p>
+                        <div class="toggle-switch" id="myToggle">
+                            <div class="toggle-track">
+                                <span class="toggle-option on">ON</span>
+                                <span class="toggle-option off">OFF</span>
+                                <div class="toggle-thumb"></div>
+                                <span class="toggle-thumb-label">ON</span>
+                            </div>
+                        </div>
+                    </div><!-- .onoff end -->
+                </div><!-- .setting-item end -->
+
+                <div class="gnb">
+                    <ul>
+                        <li class="active">
+                            <a href="#">전체</a>
+                        </li>
+                        <li>
+                            <a href="#">주문/배송</a>
+                        </li>
+                        <li>
+                            <a href="#">이벤트/혜택</a>
+                        </li>
+                        <li>
+                            <a href="#">내활동</a>
+                        </li>
+                    </ul>
+                </div><!-- .gnb end -->
+
+                <section class="section-01">
+                    <div class="inner">
+                        <a href="#">마감임박 쿠폰</a>
+                        <div class="news">
+                            <div class="list-01">
+                                <div class="title">
+                                    <b>이번 주 무신사 알림 요약</b>
+                                    <img src="../img/위로접기-icon.webp" alt="위로접기아이콘">
+                                </div><!-- .title end -->
+                                <div class="item">
+                                    <div class="depth-01">
+                                        <div class="left">
+                                            <img src="../img/notice-img-1.webp" alt="주문상태변경이미지">
+                                            <p>주문상태변경</p>
+                                        </div><!-- .left end -->
+                                        <div class="right">
+                                            <img src="../img/pin-icon.webp" alt="고정핀아이콘">
+                                            <a href="#"><img src="../img/more-세로-icon.webp" alt="세로더보기아이콘"></a>
+                                        </div><!-- .right end -->
+                                    </div><!-- .depth-01 end -->
+                                    <div class="depth-02">
+                                        <div class="left">
+                                            <img src="../img/notice-img-2.webp" alt="배송완료이미지">
+                                            <p>배송완료</p>
+                                        </div><!-- .left end -->
+                                        <div class="right">
+                                            <a href="#"><img src="../img/more-세로-icon.webp" alt="세로더보기아이콘"></a>
+                                        </div><!-- .right end -->
+                                    </div><!-- .depth-02 end -->
+                                </div><!-- .item end -->
+                            </div><!-- .list-01 end -->
+
+                            <div class="list-02">
+                                <div class="title">
+                                    <b>전체</b>
+                                </div><!-- .title end -->
+                                <div class="item">
+                                    <div class="depth-01">
+                                        <div class="left">
+                                            <img src="../img/notice-img-3.webp" alt="주문상태변경이미지">
+                                            <p>새로운 이벤트 혜택</p>
+                                            <img src="../img/new-icon.webp" alt="새로운 알림 아이콘">
+                                        </div><!-- .left end -->
+                                        <div class="right">
+                                            <a href="#"><img src="../img/more-세로-icon.webp" alt="세로더보기아이콘"></a>
+                                        </div><!-- .right end -->
+                                    </div><!-- .depth-01 end -->
+                                    <div class="depth-02">
+                                        <div class="left">
+                                            <img src="../img/notice-img-4.webp" alt="새로운 내 활동 이미지">
+                                            <p>새로운 내 활동</p>
+                                            <img src="../img/new-icon.webp" alt="새로운 알림 아이콘">
+                                        </div><!-- .left end -->
+                                        <div class="right">
+                                            <a href="#"><img src="../img/more-세로-icon.webp" alt="세로더보기아이콘"></a>
+                                        </div><!-- .right end -->
+                                    </div><!-- .depth-02 end -->
+                                </div><!-- .item end -->
+                            </div><!-- .list-02 end -->
+                        </div><!-- .news end -->
+                    </div><!-- .inner end -->
+                </section><!-- .section-01 end -->
+            </div><!-- .inner end -->
+        </div><!-- .main end -->
 
 
-
-    <div class="bottom_nav">
+        <div class="bottom_nav">
             <ul class="tab_nav">
                 <li>
                     <img src="../img/dark-search-icon-off.webp" alt="카테고리아이콘">
@@ -26,8 +194,8 @@
                 </li>
                 <li>
                     <a href="../index.html">
-                    <img src="../img/dark-home-icon-off.webp" alt="홈아이콘">
-                    <b>홈</b>
+                        <img src="../img/dark-home-icon-off.webp" alt="홈아이콘">
+                        <b>홈</b>
                     </a>
                 </li>
                 <li>
@@ -36,11 +204,13 @@
                 </li>
                 <li>
                     <a href="mypage.html">
-                    <img src="../img/dark-my-icon-off.webp" alt="마이아이콘">
-                    <b>마이</b>
+                        <img src="../img/dark-my-icon-off.webp" alt="마이아이콘">
+                        <b>마이</b>
                     </a>
                 </li>
             </ul><!-- tab_nav -->
         </div><!-- bottom_nav -->
+    </div><!-- #wrap -->
 </body>
+
 </html>
