@@ -149,6 +149,7 @@
 
 .main .gnb ul li a {
   color: #fff;
+  font-size: 14px;
   font-weight: 500;
   padding-bottom: 10px;
   position: relative;
@@ -191,7 +192,7 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .main .main_visual .swiper-slide .text b {
@@ -201,8 +202,8 @@
 }
 
 .main .main_visual .swiper-slide .text p {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .main .main_visual .swiper-slide .num {
@@ -224,7 +225,7 @@
 .section-01 {
   /* width: calc(100% - 40px);
   margin: 25px auto 0; */
-  padding: 30px 20px 100px;
+  padding: 33px 20px 100px;
   background-color: #fff;
 }
 
@@ -291,7 +292,7 @@
 .section-01 .foryou .list .swiper-slide .item a .text .price{
   display: flex;
   gap: 3px;
-  align-items: center;
+  align-items: flex-end;
 }
 .section-01 .foryou .list .swiper-slide .item a .text .price span{
   font-weight: 600;
