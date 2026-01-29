@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>무신사</title>
+    <title>MUSINSA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
@@ -22,6 +22,7 @@
                 // 클릭 이벤트
                 tabs.forEach(tab => {
                     tab.addEventListener("click", function (e) {
+                    if (e.target.closest("a")) return;
                         e.preventDefault();
 
                         // 기존 활성화 해제
@@ -82,7 +83,7 @@
             <div class="inner">
                 <h1 class="logo">MUSINSA</h1><!-- .logo end -->
                 <nav class="nav">
-                    <a href="#"><img src="img/bell-icon.webp" alt="알림아이콘"></a>
+                    <a href="sub/notice.html"><img src="img/bell-icon.webp" alt="알림아이콘"></a>
                     <a href="#"><img src="img/bag-icon.webp" alt="장바구니아이콘"></a>
                 </nav><!-- .nav end -->
             </div><!-- .inner end -->
@@ -380,8 +381,10 @@
                     <b>좋아요</b>
                 </li>
                 <li>
+                    <a href="sub/mypage.html">
                     <img src="img/my-icon-off.webp" alt="마이아이콘">
                     <b>마이</b>
+                    </a>
                 </li>
             </ul><!-- tab_nav -->
         </div><!-- bottom_nav -->
