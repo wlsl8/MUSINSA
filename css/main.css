@@ -409,16 +409,6 @@
   text-align: center;
 }
 
-.bottom_nav .tab_nav li a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 75px;
-  gap: 4px;
-  width: 100%;
-}
-
 .bottom_nav .tab_nav li img {
   height: 30px;
   object-fit: cover;
