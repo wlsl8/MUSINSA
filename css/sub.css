@@ -80,7 +80,7 @@
 }
 
 .notice .header .title b {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .notice .section-01 .news .title b {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
 }
 
@@ -309,7 +309,7 @@
     height: 85px;
     object-fit: cover;
     border: 1px solid #dddddd;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .notice .section-01 .news .item .left p {
@@ -676,7 +676,16 @@
     width: 100%;           
     box-sizing: border-box;
 }
-
+.coupon .bottom_btn::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    z-index: -1;         
+}
 .coupon .bottom_btn .inner {
     width: calc(100% - 40px);  
     height: 50px;
