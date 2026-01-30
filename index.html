@@ -10,6 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
         window.onload = () => {
+            const splash = document.getElementById("splash");
+
+            if (splash) {
+
+                // 이미 실행 중이면 splash 안 보여줌
+                if (sessionStorage.getItem("splashShown")) {
+                    splash.style.display = "none";
+                } else {
+                    // 처음 실행이면 splash 보여주고 기록
+                    sessionStorage.setItem("splashShown", "true");
+
+                    setTimeout(() => {
+                        splash.classList.add("hide");
+                    }, 1500);
+                }
+            }
+
+
             function setupTabs(selector) {
                 const tabs = document.querySelectorAll(selector);
                 if (tabs.length === 0) return;
@@ -22,7 +40,7 @@
                 // 클릭 이벤트
                 tabs.forEach(tab => {
                     tab.addEventListener("click", function (e) {
-                    if (e.target.closest("a")) return;
+                        if (e.target.closest("a")) return;
                         e.preventDefault();
 
                         // 기존 활성화 해제
@@ -78,6 +96,19 @@
 </head>
 
 <body>
+    <!-- Splash Screen -->
+    <div id="splash">
+        <div class="inner">
+            <div class="text">
+                <span>Soft Clash</span>
+                <p>Nero</p>
+                <strong>ADSB</strong>
+                <b>MUSINSA</b>
+            </div><!-- .text end -->
+        </div><!-- .inner end -->
+    </div><!-- #splash -->
+
+
     <div id="wrap">
         <header class="header">
             <div class="inner">
@@ -382,8 +413,8 @@
                 </li>
                 <li>
                     <a href="sub/mypage.html">
-                    <img src="img/my-icon-off.webp" alt="마이아이콘">
-                    <b>마이</b>
+                        <img src="img/my-icon-off.webp" alt="마이아이콘">
+                        <b>마이</b>
                     </a>
                 </li>
             </ul><!-- tab_nav -->
