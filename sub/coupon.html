@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coupon | MUSINSA</title>
     <link rel="stylesheet" href="../css/sub.css">
+    <script>
+        window.onload = () => {
+            const items = document.querySelectorAll('.section-02 .item');
+
+            items.forEach(item => {
+                const bottomSpan = item.querySelector('.bottom span');
+                const img = item.querySelector('.price img');
+
+                // span 있으면 사용 불가 처리
+                if (bottomSpan) {
+                    item.classList.add('disabled');
+                }
+
+                img.src = '../img/choice-icon-off.webp';
+
+                item.addEventListener('click', () => {
+                    // 사용 불가 쿠폰은 클릭 막기
+                    if (item.classList.contains('disabled')) return;
+
+                    items.forEach(other => {
+                        other.classList.remove('selected');
+                        const otherImg = other.querySelector('.price img');
+                        otherImg.src = '../img/choice-icon-off.webp';
+                    });
+
+                    item.classList.add('selected');
+                    img.src = '../img/choice-icon-on.webp';
+                });
+            });
+
+        };
+    </script>
 </head>
+
 <body class="sub-page coupon">
-    | MUSINSA
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+                <b>쿠폰사용</b>
+                <a href="notice.html"><img src="../img/close-icon.webp" alt="닫기아이콘"></a>
+            </div><!-- .inner -->
+        </header>
+
+        <main class="main">
+            <div class="inner">
+                <section class="section-01">
+                    <div class="title">
+                        <div class="text">
+                            <p>보유 쿠폰 (233장)</p>
+                            <img src="../img/right-more-icon.webp" alt="오른쪽 더보기 아이콘">
+                        </div><!-- .text -->
+                        <div class="text">
+                            <p>쿠폰 받기 (843장)</p>
+                            <img src="../img/right-more-icon.webp" alt="오른쪽 더보기 아이콘">
+                        </div><!-- .text -->
+                    </div><!-- .title -->
+                    <div class="btn">
+                        <p>+ 쿠폰등록</p>
+                    </div><!-- .btn end -->
+                </section><!-- .section-01 end -->
+
+                <section class="section-02">
+                    <div class="list">
+                        <div class="item">
+                            <div class="top">
+                                <div class="price">
+                                    <img src="../img/choice-icon-on.webp" alt="선택아이콘">
+                                    <strong>16,740원 (15%)</strong>
+                                </div><!-- .price end -->
+                                <div class="day">
+                                    <span>25.07.31까지</span>
+                                </div><!-- .day end -->
+                            </div><!-- .top end -->
+                            <div class="bottom">
+                                <b>[최대 할인 쿠폰]</b>
+                                <p>10원 이상 구매시 최대 30,000원 할인</p>
+                            </div><!-- .bottom end -->
+                        </div><!-- .item end -->
+
+                        <div class="item">
+                            <div class="top has-p">
+                                <div class="price">
+                                    <img src="../img/choice-icon-off.webp" alt="선택아이콘">
+                                    <strong>14,510원 (13%)</strong>
+                                </div><!-- .price end -->
+                                <div class="day">
+                                    <p>6일 남음</p>
+                                    <span>25.07.20까지</span>
+                                </div><!-- .day end -->
+                            </div><!-- .top has-p end -->
+                            <div class="bottom">
+                                <p>100,000원 이상 구매시 최대 24,000원 할인</p>
+                            </div><!-- .bottom end -->
+                        </div><!-- .item end -->
+
+                        <div class="item">
+                            <div class="top has-p">
+                                <div class="price">
+                                    <img src="../img/choice-icon-off.webp" alt="선택아이콘">
+                                    <strong>14,510원 (13%)</strong>
+                                </div><!-- .price end -->
+                                <div class="day">
+                                    <p>6일 남음</p>
+                                    <span>25.07.20까지</span>
+                                </div><!-- .day end -->
+                            </div><!-- .top has-p end -->
+                            <div class="bottom">
+                                <p>100,000원 이상 구매시 최대 24,000원 할인</p>
+                                <span>다른 상품에 15,480원 할인 적용중</span>
+                            </div><!-- .bottom end -->
+                        </div><!-- .item end -->
+
+                        <div class="item">
+                            <div class="top">
+                                <div class="price">
+                                    <img src="../img/choice-icon-off.webp" alt="선택아이콘">
+                                    <strong>22,320원 (20%)</strong>
+                                </div><!-- .price end -->
+                                <div class="day">
+                                    <span>25.07.31까지</span>
+                                </div><!-- .day end -->
+                            </div><!-- .top end -->
+                            <div class="bottom">
+                                <p>150,000원 이상 구매시 최대 40,000원 할인</p>
+                                <span>38,400원 결제 금액 부족</span>
+                            </div><!-- .bottom end -->
+                        </div><!-- .item end -->
+                    </div><!-- .list end -->
+                </section><!-- .section-02 end -->
+            </div><!-- .inner end -->
+        </main>
+
+        <div class="bottom_btn">
+            <div class="inner">
+                <button>적용하기</button>
+            </div><!-- .inner end -->
+        </div><!-- .bottom_btn end -->
+    </div><!-- #wrap -->
+
+
 </body>
+
 </html>

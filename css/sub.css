@@ -54,7 +54,6 @@
     color: #333;
 }
 
-
 .notice .header {
     background-color: #ECE8D9;
 }
@@ -229,12 +228,12 @@
     margin-top: 40px;
 }
 
-.notice .section-01 > .inner {
+.notice .section-01>.inner {
     width: 100%;
     margin: 0 auto;
 }
 
-.notice .section-01 > .inner > a {
+.notice .section-01>.inner>a {
     font-size: 15px;
     font-weight: 500;
     color: #fff;
@@ -252,10 +251,12 @@
     flex-direction: column;
     gap: 25px;
 }
+
 .notice .section-01 .news .list-01 {
     position: relative;
     padding-bottom: 25px;
 }
+
 .notice .section-01 .news .list-01::after {
     content: '';
     position: absolute;
@@ -302,6 +303,7 @@
     align-items: center;
     gap: 17px;
 }
+
 .notice .section-01 .news .item .left img {
     width: 70px;
     height: 85px;
@@ -309,6 +311,7 @@
     border: 1px solid #dddddd;
     border-radius: 5px;
 }
+
 .notice .section-01 .news .item .left p {
     font-size: 15px;
     font-weight: 400;
@@ -319,28 +322,32 @@
     align-items: center;
     gap: 5px;
 }
+
 .notice .section-01 .news .item .right a img {
     width: 28px;
     height: 28px;
     object-fit: cover;
 }
 
-.notice .section-01 .news .list-01 .item .right > img {
+.notice .section-01 .news .list-01 .item .right>img {
     width: 20px;
     height: 20px;
     object-fit: cover;
 }
+
 .notice .section-01 .news .list-02 {
     padding-bottom: 100px;
 }
-.notice .section-01 .news .list-02 .item{
+
+.notice .section-01 .news .list-02 .item {
     margin-top: 15px;
 }
 
-.notice .section-01 .news .list-02 .item .left{
+.notice .section-01 .news .list-02 .item .left {
     position: relative;
 }
-.notice .section-01 .news .list-02 .item .left img:last-child{
+
+.notice .section-01 .news .list-02 .item .left img:last-child {
     width: 6px;
     height: 6px;
     object-fit: cover;
@@ -417,4 +424,275 @@
 
 .bottom_nav .tab_nav li.active b {
     font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+.coupon #wrap {
+    max-width: 430px;
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #fff;
+    font-family: 'Pretendard';
+    color: #333;
+}
+
+.coupon .header {
+    width: calc(100% - 40px);
+    margin: 40px auto 25px;
+}
+
+.coupon .header .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coupon .header .inner b {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.coupon .header .inner img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.coupon .main {
+    max-width: 430px;
+    min-width: 320px;
+}
+
+.coupon .main .inner {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.coupon .main .inner .section-01 {
+    width: calc(100% - 40px);
+    margin: 0 auto 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coupon .main .inner .section-01 .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coupon .main .inner .section-01 .title .text {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.coupon .main .inner .section-01 .title .text p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #9B9B9B;
+}
+
+.coupon .main .inner .section-01 .title .text img {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+}
+
+.coupon .main .inner .section-01 .btn {
+    width: 60px;
+    height: 23px;
+    border: 1px solid #9B9B9B;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon .main .inner .section-01 .btn p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9B9B9B;
+}
+
+
+.coupon .main .section-02 {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.coupon .main .section-02 .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.coupon .main .section-02 .list .item {
+    width: 100%;
+    margin: 0 20px;
+    border: 1.5px solid #C9B187;
+    border-radius: 5px;
+    min-height: 103px;
+    padding: 20px 15px 18px;
+    /* cursor: pointer; */
+    transition: border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.coupon .main .section-02 .list .item .top.has-p {
+    margin-top: -10px;
+}
+
+/* 사용 불가 쿠폰 (span 있을 때) */
+.coupon .main .section-02 .item.disabled {
+    border-color: #CDCDCD;
+    opacity: 0.6;
+    /* cursor: not-allowed; */
+}
+
+.coupon .main .section-02 .item.selected {
+    border: 2px solid #CDB58F;
+    box-shadow: 0 0 0 1px #DDC8AA;
+}
+
+.coupon .main .section-02 .item.disabled.selected {
+    border-color: #CDCDCD;
+}
+
+.coupon .main .section-02 .list .item .top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+}
+
+.coupon .main .section-02 .list .item .top::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 1px;
+    background-color: #ECE8D9;
+}
+
+.coupon .main .section-02 .list .item .top .price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coupon .main .section-02 .list .item .top .price img {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.coupon .main .section-02 .list .item .top .price strong {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.coupon .main .section-02 .list .item .top .day {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.coupon .main .section-02 .list .item .top .day p {
+    font-size: 11px;
+    font-weight: 500;
+    color: #7C6C55;
+    padding: 3px;
+    background-color: #EDE0CC;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.coupon .main .section-02 .list .item .top .day span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9B9B9B;
+}
+
+.coupon .main .section-02 .list .item .bottom {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.coupon .main .section-02 .list>.item:first-child .bottom {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.coupon .main .section-02 .list .item .bottom b {
+    font-size: 12px;
+    font-weight: 600;
+    color: #5AB1B5;
+}
+
+.coupon .main .section-02 .list .item .bottom p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.coupon .main .section-02 .list .item .bottom span {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 5px;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+}
+
+
+.coupon .bottom_btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    max-width: 430px;
+    min-width: 320px;
+    width: 100%;           
+    box-sizing: border-box;
+}
+
+.coupon .bottom_btn .inner {
+    width: calc(100% - 40px);  
+    height: 50px;
+    margin: 0 auto;           
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #5AB1B5;
+}
+
+.coupon .bottom_btn .inner button {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
