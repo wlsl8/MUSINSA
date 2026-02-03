@@ -86,28 +86,28 @@
 
 #splash .inner .text span {
   font-size: 25px;
-  font-weight: 400;
+  font-weight: 500;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
   margin-top: 20px;
 }
 
 #splash .inner .text p {
-  font-size: 35px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
 #splash .inner .text strong {
-  margin-top: 160px;
+  margin-top: 170px;
   font-size: 70px;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.75);
 }
 
 #splash .inner .text b {
   margin-top: 230px;
-  font-size: 27px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 600;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
