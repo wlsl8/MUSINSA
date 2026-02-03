@@ -156,7 +156,6 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    background: #DDC8AA;
     border-radius: 10px;
     top: 0;
     left: 0;
@@ -446,7 +445,7 @@
 
 .coupon .header {
     width: calc(100% - 40px);
-    margin: 60px auto 40px;
+    margin: 40px auto 40px;
 }
 
 .coupon .header .inner {
@@ -565,7 +564,7 @@
 }
 
 .coupon .main .section-02 .item.selected {
-    border: 2px solid #A8844F;
+    border: 2px solid #B39E6A;
     box-shadow: 0 0 0 1px #C2A173;
 }
 
@@ -667,13 +666,14 @@
 
 .coupon .bottom_btn {
     position: fixed;
-    bottom: 30px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 99;
     max-width: 430px;
     min-width: 320px;
     width: 100%;           
+    padding-bottom: 30px;
     box-sizing: border-box;
 }
 .coupon .bottom_btn::before {

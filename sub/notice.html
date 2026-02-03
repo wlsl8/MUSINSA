@@ -38,6 +38,16 @@
             updateToggle();
 
 
+            //메뉴 선택
+            const gnbItems = document.querySelectorAll(".gnb li a");
+            gnbItems.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    gnbItems.forEach(l => l.parentElement.classList.remove("active"));
+                    link.parentElement.classList.add("active");
+                });
+            });
+
             // 알림 접기/펼치기 기능
             const toggleBtn = document.querySelector(".list-01 .toggle-btn");
             const listItem = document.querySelector(".list-01 .item");
