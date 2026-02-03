@@ -135,35 +135,28 @@
 .notice .main .inner .setting-item .onoff .toggle-track {
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: 1px solid #333;
+    background: #ECE8D9;
+    border: 2px solid #DDC8AA;
     border-radius: 10px;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 3px;
     box-sizing: border-box;
-    position: relative;
-    font-size: 10px;
 }
-
 .notice .main .inner .setting-item .onoff .toggle-option {
-    flex: 1;
-    text-align: center;
+    font-size: 10px;
     font-weight: bold;
     z-index: 1;
-    color: #333;
     pointer-events: none;
-    /* 클릭이 thumb로 가도록 */
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 10px;
-    line-height: 20px;
+    transition: color 0.3s;
 }
-
 .notice .main .inner .setting-item .onoff .toggle-thumb {
     position: absolute;
     width: 50%;
     height: 100%;
-    background: #333;
+    background: #DDC8AA;
     border-radius: 10px;
     top: 0;
     left: 0;
@@ -171,18 +164,8 @@
     z-index: 0;
 }
 
-.notice .main .inner .setting-item .onoff .toggle-thumb-label {
-    position: absolute;
-    width: 50%;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-    top: 0;
-    left: 0;
-    line-height: 20px;
-    transition: left 0.3s, color 0.3s;
-    z-index: 2;
-}
+
+
 
 
 .notice .main .inner .gnb {
@@ -205,9 +188,10 @@
     display: block;
     padding: 9px 6px;
     text-align: center;
-    border: 1.5px solid #DDC8AA;
+    border: 1.5px solid #E3D3BB;
+    box-shadow: 0 2px 4px rgba(79, 68, 54, 0.12);
     border-radius: 15px;
-    background-color: transparent;
+    background-color: #F1ECDF;
     color: #7C6C55;
     text-decoration: none;
     font-size: 14px;
@@ -217,8 +201,9 @@
 }
 
 .notice .main .inner .gnb ul li.active a {
-    background-color: #DDC8AA;
-    color: #333;
+    background-color: #E3D3BB;
+    color: #4F4436;
+    box-shadow: inset 0 1px 2px rgba(79, 68, 54, 0.15);
     font-weight: 600;
 }
 
@@ -283,14 +268,28 @@
     height: 11px;
     object-fit: cover;
 }
+.notice .section-01 .news .list-01 .title img.toggle-btn {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.notice .section-01 .news .list-01.collapsed .title img.toggle-btn {
+    transform: rotate(180deg);
+}
 
 .notice .section-01 .news .item {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: hidden;
+    height: auto; 
+    opacity: 1;
 }
-
+.notice .section-01 .news .list-01.collapsed .item {
+    max-height: 0;
+    opacity: 0;
+}
 .notice .section-01 .news .item .depth-01,
 .notice .section-01 .news .item .depth-02 {
     display: flex;
@@ -447,7 +446,7 @@
 
 .coupon .header {
     width: calc(100% - 40px);
-    margin: 40px auto 25px;
+    margin: 60px auto 40px;
 }
 
 .coupon .header .inner {
@@ -480,7 +479,7 @@
 
 .coupon .main .inner .section-01 {
     width: calc(100% - 40px);
-    margin: 0 auto 33px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -566,8 +565,8 @@
 }
 
 .coupon .main .section-02 .item.selected {
-    border: 2px solid #CDB58F;
-    box-shadow: 0 0 0 1px #DDC8AA;
+    border: 2px solid #A8844F;
+    box-shadow: 0 0 0 1px #C2A173;
 }
 
 .coupon .main .section-02 .item.disabled.selected {
@@ -683,7 +682,7 @@
     top: -15px;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: #fff;
     z-index: -1;         
 }

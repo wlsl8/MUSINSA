@@ -8,58 +8,74 @@
     <link rel="stylesheet" href="../css/sub.css">
     <script>
         window.onload = () => {
+            // 토글 스위치 기능
             const toggle = document.getElementById("myToggle");
             const thumb = toggle.querySelector(".toggle-thumb");
-            const thumbLabel = toggle.querySelector(".toggle-thumb-label");
-            const options = toggle.querySelectorAll(".toggle-option");
+            const optionOn = toggle.querySelector(".toggle-option.on");
+            const optionOff = toggle.querySelector(".toggle-option.off");
 
             let isOn = true;
 
             function updateToggle() {
                 if (isOn) {
-                    // thumb 이동
                     thumb.style.left = "0";
-                    thumbLabel.style.left = "0";
-
-                    // 글자 표시
-                    thumbLabel.textContent = "ON";
-                    thumbLabel.style.color = "#fff";
-
-                    // 옵션 글자는 항상 비활성 색상
-                    options[0].style.color = "#333";
-                    options[1].style.color = "#333";
+                    thumb.style.background = "#DDC8AA";
+                    optionOn.style.color = "#fff";
+                    optionOff.style.color = "#4F4436";
                 } else {
                     thumb.style.left = "50%";
-                    thumbLabel.style.left = "50%";
-
-                    thumbLabel.textContent = "OFF";
-                    thumbLabel.style.color = "#fff";
-
-                    options[0].style.color = "#333";
-                    options[1].style.color = "#333";
+                    thumb.style.background = "#C9B089";
+                    optionOn.style.color = "#4F4436";
+                    optionOff.style.color = "#fff";
                 }
             }
 
-            // 클릭 시 토글
             toggle.addEventListener("click", () => {
                 isOn = !isOn;
                 updateToggle();
             });
 
-            // 초기 상태 반영
             updateToggle();
 
 
-            const gnbItems = document.querySelectorAll(".gnb li");
+            // 알림 접기/펼치기 기능
+            const toggleBtn = document.querySelector(".list-01 .toggle-btn");
+            const listItem = document.querySelector(".list-01 .item");
+            let collapsed = false;
 
-            gnbItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    gnbItems.forEach(i => i.classList.remove("active"));
+            toggleBtn.addEventListener("click", () => {
+                const fullHeight = listItem.scrollHeight + "px";
 
-                    item.classList.add("active");
-                });
+                if (!collapsed) {
+                    listItem.style.maxHeight = fullHeight;
+                    listItem.style.transition = "max-height 0.4s ease, opacity 0.4s ease";
+                    requestAnimationFrame(() => {
+                        listItem.style.maxHeight = "0";
+                        listItem.style.opacity = "0";
+                    });
+                } else {
+                    listItem.style.maxHeight = "0";
+                    listItem.style.opacity = "0";
+                    requestAnimationFrame(() => {
+                        listItem.style.transition = "max-height 0.4s ease, opacity 0.4s ease";
+                        listItem.style.maxHeight = fullHeight;
+                        listItem.style.opacity = "1";
+                    });
+                }
+
+                collapsed = !collapsed;
+
+
+                toggleBtn.style.transform = collapsed ? "rotate(180deg)" : "rotate(0deg)";
+
+                listItem.addEventListener(
+                    "transitionend",
+                    function handler(e) {
+                        if (!collapsed) listItem.style.maxHeight = "none";
+                        listItem.removeEventListener("transitionend", handler);
+                    }
+                );
             });
-
 
         };
     </script>
@@ -93,7 +109,6 @@
                                 <span class="toggle-option on">ON</span>
                                 <span class="toggle-option off">OFF</span>
                                 <div class="toggle-thumb"></div>
-                                <span class="toggle-thumb-label">ON</span>
                             </div>
                         </div>
                     </div><!-- .onoff end -->
@@ -123,7 +138,7 @@
                             <div class="list-01">
                                 <div class="title">
                                     <b>이번 주 무신사 알림 요약</b>
-                                    <img src="../img/위로접기-icon.webp" alt="위로접기아이콘">
+                                    <img src="../img/위로접기-icon.webp" alt="위로접기아이콘" class="toggle-btn">
                                 </div><!-- .title end -->
                                 <div class="item">
                                     <div class="depth-01">

@@ -21,9 +21,9 @@
                     // 처음 실행이면 splash 보여주고 기록
                     sessionStorage.setItem("splashShown", "true");
 
-                    setTimeout(() => {
+                    /* setTimeout(() => {
                         splash.classList.add("hide");
-                    }, 1500);
+                    }, 1500); */
                 }
             }
 
@@ -37,27 +37,24 @@
                 if (firstImg) firstImg.src = firstImg.src.replace("-off", "-on");
 
 
-                // 클릭 이벤트
                 tabs.forEach(tab => {
                     tab.addEventListener("click", function (e) {
                         if (e.target.closest("a")) return;
                         e.preventDefault();
 
-                        // 기존 활성화 해제
                         tabs.forEach(t => {
                             t.classList.remove("active");
                             const img = t.querySelector("img");
                             if (img) img.src = img.src.replace("-on", "-off");
                         });
 
-                        // 클릭한 탭 활성화
                         tab.classList.add("active");
                         const img = tab.querySelector("img");
                         if (img) img.src = img.src.replace("-off", "-on");
                     });
                 });
             }
-            // 적용
+
             setupTabs(".bottom_nav .tab_nav li");
 
 
