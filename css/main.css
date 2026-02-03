@@ -85,15 +85,15 @@
 }
 
 #splash .inner .text span {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 600;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
   margin-top: 20px;
 }
 
 #splash .inner .text p {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 33px;
+  font-weight: 700;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
@@ -106,8 +106,8 @@
 
 #splash .inner .text b {
   margin-top: 230px;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 

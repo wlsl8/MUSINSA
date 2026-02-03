@@ -38,15 +38,86 @@
             updateToggle();
 
 
-            //메뉴 선택
+            // 메뉴 선택 + 리스트 필터링
             const gnbItems = document.querySelectorAll(".gnb li a");
+
+            const list01 = document.querySelector(".list-01");
+            const list01Title = list01.querySelector(".title"); 
+            const list01Items = list01.querySelectorAll(".item"); 
+
+            const list02 = document.querySelector(".list-02");
+            const list02Title = list02.querySelector(".title"); 
+            const list02Depth1 = list02.querySelector(".depth-01");
+            const list02Depth2 = list02.querySelector(".depth-02");
+
+            const news = document.querySelector(".news");
+
             gnbItems.forEach(link => {
                 link.addEventListener("click", (e) => {
                     e.preventDefault();
+
                     gnbItems.forEach(l => l.parentElement.classList.remove("active"));
                     link.parentElement.classList.add("active");
+
+                    const text = link.textContent.trim();
+
+                    news.classList.remove("compact-small", "compact-large");
+
+                    switch (text) {
+                        case "전체":
+                            list01Title.style.display = "flex";
+                            list02Title.style.display = "flex";
+
+                            list01Items.forEach(item => item.classList.remove("hidden"));
+                            list02Depth1.classList.remove("hidden");
+                            list02Depth2.classList.remove("hidden");
+                            list02.classList.remove("hidden");
+
+                            list01.classList.remove("hide-after");
+
+                            list01.classList.remove("compact-small", "compact-large");
+                            break;
+
+                        case "주문/배송":
+                            list01Title.style.display = "none";
+                            list02Title.style.display = "none";
+
+                            list01Items.forEach(item => item.classList.remove("hidden"));
+                            list02.classList.add("hidden");
+
+                            list01.classList.add("hide-after");
+                            news.classList.add("compact-large"); 
+                            break;
+
+                        case "이벤트/혜택":
+                            list01Title.style.display = "none";
+                            list02Title.style.display = "none";
+
+                            list01Items.forEach(item => item.classList.add("hidden"));
+                            list02.classList.remove("hidden");
+                            list02Depth1.classList.remove("hidden");
+                            list02Depth2.classList.add("hidden");
+
+                            list01.classList.add("hide-after");
+                            news.classList.add("compact-small"); 
+                            break;
+
+                        case "내활동":
+                            list01Title.style.display = "none";
+                            list02Title.style.display = "none";
+
+                            list01Items.forEach(item => item.classList.add("hidden"));
+                            list02.classList.remove("hidden");
+                            list02Depth1.classList.add("hidden");
+                            list02Depth2.classList.remove("hidden");
+
+                            list01.classList.add("hide-after");
+                            news.classList.add("compact-small"); 
+                            break;
+                    }
                 });
             });
+
 
             // 알림 접기/펼치기 기능
             const toggleBtn = document.querySelector(".list-01 .toggle-btn");
