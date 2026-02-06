@@ -59,9 +59,10 @@
 }
 
 .notice .header .inner {
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: 100%;
+    padding: 25px 20px 0;
     margin: 0 auto;
-    padding-top: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -104,7 +105,9 @@
 }
 
 .notice .main .inner {
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -135,7 +138,6 @@
 .notice .main .inner .setting-item .onoff .toggle-track {
     width: 100%;
     height: 100%;
-    background: #ECE8D9;
     border: 2px solid #DDC8AA;
     border-radius: 10px;
     font-size: 10px;
@@ -162,9 +164,6 @@
     transition: left 0.3s, background 0.3s;
     z-index: 0;
 }
-
-
-
 
 
 .notice .main .inner .gnb {
@@ -442,14 +441,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 .coupon #wrap {
     max-width: 430px;
     min-width: 320px;
@@ -461,7 +452,9 @@
 }
 
 .coupon .header {
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: 100%;
+    padding: 0 20px;
     margin: 40px auto 40px;
 }
 
@@ -494,7 +487,9 @@
 }
 
 .coupon .main .inner .section-01 {
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
@@ -543,7 +538,9 @@
 
 
 .coupon .main .section-02 {
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -697,7 +694,9 @@
     box-sizing: border-box;
 }
 .coupon .bottom_btn .inner {
-    width: calc(100% - 40px);  
+    /* width: calc(100% - 40px);  */
+    width: 100%;
+    padding: 0 20px; 
     height: 50px;
     margin: 0 auto;           
     display: flex;
